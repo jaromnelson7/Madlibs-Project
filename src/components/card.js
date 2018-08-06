@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Input from './input';
 import Content from '.content';
 
-const INITIAL_STATE={
+const INITIAL_STATE = {
             color: '',
             pluralNoun: '',
             adjectiveOne: '',
@@ -73,14 +73,16 @@ class Card extends Component {
             {title: 'Noun', state: this.state.nounThree, name: 'nounThree' },
             {title: 'Celebrity', state: this.state.celebFour, name: 'celebFour' },
             {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive' },
-            
+           
         ]
 
         return (
             <form onSubmit={this.handleFormSubmit} className="card">
                 <div className="card__inputs">
                 {
-                    inputData.map(data => Input( (data), this.handleInputChange ))
+                    inputData.map((data, index) => {
+                       return Input( (data), this.handleInputChange, index) 
+                })
                 }
                 </div>
                 <button type="submit">{!this.state.contentVisible ? 'Generate Mad Lib' : 'Clear Form'}Generate Madlib</button>
