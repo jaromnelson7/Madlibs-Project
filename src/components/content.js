@@ -7,9 +7,9 @@ class Content extends Component {
            console.log(key); 
         }
 
-        this.props.data.map((object, index) => {
-            console.log(index);
-        })
+        // this.props.data.map((object, index) => {
+        //    console.log(index);
+        // })
         // <span>{data.indexOF(data.color)}</span>
         return (
             <p>
